@@ -12,7 +12,37 @@
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
 // });
+$(() => {
+//this will allow buttons to be hover on and show information only when hovering over.
+    $("#btn1").hover(function(){
+        $("#london").toggle();
+    })
+    $("#btn2").hover(function(){
+        $("#costa").toggle();
+    })
+    $("#btn3").hover(function(){
+        $("#phuket").toggle();
+    })
+    $("#btn4").hover(function(){
+        $("#rome").toggle();
+    })
+    $("#btn5").hover(function(){
+        $("#rio").toggle();
+    })
+    $("#btn6").hover(function(){
+        $("#tokyo").toggle();
+    })
+    $("#btn7").hover(function(){
+        $("#barcelona").toggle();
+    })
+    $("#btn8").hover(function(){
+        $("#nyc").toggle();
+    })
 
+    $("#btn9").hover(function(){
+        $("#bali").toggle();
+    })
+});
 const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -24,30 +54,33 @@ const settings = {
 	}
 };
 /////////////////////////////////////
-// const getLondon =() => {
-// $.ajax(settings).then(function (response) {
-//     console.log(response);
+const getLondon =() => {
+$.ajax(settings).then(function (response) {
+    console.log(response);
 
-//     });
-// }
-// $(() => {
-//     console.log (getLondon());
-// });
+    });
+}
+$(() => {
+    console.log (getLondon());
+    $("button").click(function(){
+        $("p").fadeIn();
+      });
+});
 
 //////////////////////////////////////
-const baseURL = settings.url
-const apiKey = settings.headers["x-rapidapi-key"]
-const apiHost = settings.headers["x-rapidapi-host"]
-let londonURL = baseURL + apiKey 
+// const baseURL = settings.url
+// const apiKey = settings.headers["x-rapidapi-key"]
+// const apiHost = settings.headers["x-rapidapi-host"]
+// let londonURL = baseURL + apiKey + apiHost
 
-const getLondon = () => {
-$.ajax({
-    url : londonURL
-}).then((londonData)=> {
-    $('.london').html(`
-        <p>${londonData.weather}</p>
-     `)
-    })
-    console.log(getLondon());
-};
+// const getLondon = () => {
+// $.ajax({
+//     url : londonURL
+// }).then((londonData)=> {
+//     $('.london').html(`
+//         <p>${londonData.weather}</p>
+//      `)
+//     })
+//     console.log(getLondon());
+// };
 	

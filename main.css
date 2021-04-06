@@ -1,3 +1,33 @@
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(9,121,95,0.5746673669467788) 35%, rgba(0,212,255,1) 100%);
+}
 h1{
     text-align: center;
+
+}
+table{
+    border: 1%;
+    border-radius: 12px;
+}
+p{
+    size: 30%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+td{
+    background-color: aqua;
+}
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    size: 25%;
+}
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(9,121,95,0.5746673669467788) 35%, rgba(0,212,255,1) 100%);
 }
