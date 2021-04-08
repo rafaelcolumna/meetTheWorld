@@ -1,24 +1,11 @@
-// const settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "58089bd26bmsha2bea889c092340p136f84jsnf84ebb1f84d7",
-// 		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
-// 	}
-// };
 
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
 $(() => {
-//this will allow buttons to be hover on and show information only when hovering over.
-// $(“#btn1”).on(“click”, $londonWeather) {
-     
+//this will allow buttons to be click on and show information only when clicked on.
+
 $("#btn1").click(function(){
         $londonWeather();
         $("#london").toggle();
+        $("#london").animate({left:'300px'});
     })
     $("#btn2").click(function(){
         $costaWeather();
@@ -58,11 +45,12 @@ $("#btn1").click(function(){
     let $londonWeather =() =>{
         $.ajax({
             type: "GET",
+            //added specific location from API weather informacion by using coordinates.
             url: "http://api.openweathermap.org/data/2.5/weather?lat=51.509865&lon=-0.118092&units=imperial&appid=6206012957e2721844367aa18fb54387",
             dataType: "json",
             success: function(data) {
                 // console.log(data);
-                $("#london").append(`Current Temp: ${data.main.temp}`);
+                $("#london").append(`Current Temp: ${data.main.temp} F`);
             }
         })
         };
@@ -73,7 +61,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#costa").append(`Current Temp: ${data.main.temp}`);
+                    $("#costa").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -85,7 +73,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#phuket").append(`Current Temp: ${data.main.temp}`);
+                    $("#phuket").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -96,7 +84,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#rome").append(`Current Temp: ${data.main.temp}`);
+                    $("#rome").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -108,7 +96,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#rio").append(`Current Temp: ${data.main.temp}`);
+                    $("#rio").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -119,7 +107,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#tokyo").append(`Current Temp: ${data.main.temp}`);
+                    $("#tokyo").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -131,7 +119,7 @@ $("#btn1").click(function(){
                 dataType: "json",
                 success: function(data) {
                     // console.log(data);
-                    $("#barcelona").append(`Current Temp: ${data.main.temp}`);
+                    $("#barcelona").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -142,8 +130,8 @@ $("#btn1").click(function(){
                 url: "http://api.openweathermap.org/data/2.5/weather?lat=40.730610&lon=-73.935242&units=imperial&appid=6206012957e2721844367aa18fb54387",
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
-                    $("#nyc").append(`Current Temp: ${data.main.temp}`);
+                    // console.log(data);
+                    $("#nyc").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
@@ -154,8 +142,8 @@ $("#btn1").click(function(){
                 url: "http://api.openweathermap.org/data/2.5/weather?lat=-8.409518&lon=115.188919&units=imperial&appid=6206012957e2721844367aa18fb54387",
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
-                    $("#bali").append(`Current Temp: ${data.main.temp}`);
+                    // console.log(data);
+                    $("#bali").append(`Current Temp: ${data.main.temp} F`);
                 }
             })
          };
