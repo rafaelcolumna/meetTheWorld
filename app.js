@@ -2,44 +2,64 @@
 $(() => {
 //this will allow buttons to be click on and show information only when clicked on.
 
-$("#btn1").click(function(){
+   $("#btn1").click(function(){
+        //will invoke API when clicked and show within p tag
         $londonWeather();
+        // will unhide info within p tag.
         $("#london").toggle();
-        $("#london").animate({left:'300px'});
-    })
+        //change background color when clicked
+        $("#btn1").css("background-color", "black");
+            
+    });
+
     $("#btn2").click(function(){
         $costaWeather();
         $("#costa").toggle();
-    })
+        $("#btn2").css("background-color", "black");
+    });
+
     $("#btn3").click(function(){
         $phuketWeather();
         $("#phuket").toggle();
-    })
+        $("#btn3").css("background-color", "black");
+    });
+
     $("#btn4").click(function(){
         $romeWeather();
         $("#rome").toggle();
-    })
+        $("#btn4").css("background-color", "black");
+    });
+
     $("#btn5").click(function(){
         $rioWeather();
         $("#rio").toggle();
-    })
+        $("#btn5").css("background-color", "black");
+    });
+
     $("#btn6").click(function(){
         $tokyoWeather();
         $("#tokyo").toggle();
-    })
+        $("#btn6").css("background-color", "black");
+    });
+
     $("#btn7").click(function(){
         $barcelonaWeather();
         $("#barcelona").toggle();
-    })
+        $("#btn7").css("background-color", "black");
+    });
+
     $("#btn8").click(function(){
         $nycWeather();
         $("#nyc").toggle();
-    })
+        $("#btn8").css("background-color", "black");
+    });
 
     $("#btn9").click(function(){
         $baliWeather();
         $("#bali").toggle();
-    })
+        $("#btn9").css("background-color", "black");
+    });
+
 
 
     let $londonWeather =() =>{
@@ -52,7 +72,7 @@ $("#btn1").click(function(){
                 // console.log(data);
                 $("#london").append(`Current Temp: ${data.main.temp} F`);
             }
-        })
+          })
         };
      let $costaWeather =() =>{
             $.ajax({
@@ -147,8 +167,6 @@ $("#btn1").click(function(){
                 }
             })
          };
-
-
     });
 
     
